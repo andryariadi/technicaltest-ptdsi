@@ -29,10 +29,10 @@ const columns = [
   {
     name: "Action",
     cell: (row) => (
-      <div>
-        <button className="btn btn-info">Delete</button>
-        <button className="btn btn-primary">Delete</button>
-        <button className="btn btn-danger">Delete</button>
+      <div className="d-flex column-gap-1">
+        <button className="btn btn-info btn-sm">Info</button>
+        <button className="btn btn-primary btn-sm">Edit</button>
+        <button className="btn btn-danger btn-sm">Delete</button>
       </div>
     ),
   },
