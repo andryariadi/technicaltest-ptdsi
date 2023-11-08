@@ -26,6 +26,16 @@ const columns = [
     selector: (row) => row.phone,
     sortable: true,
   },
+  {
+    name: "Action",
+    cell: (row) => (
+      <div>
+        <button className="btn btn-info">Delete</button>
+        <button className="btn btn-primary">Delete</button>
+        <button className="btn btn-danger">Delete</button>
+      </div>
+    ),
+  },
 ];
 
 export default function TableCom({ users }) {
