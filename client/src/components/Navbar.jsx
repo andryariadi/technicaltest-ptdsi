@@ -28,12 +28,14 @@ export default function NavbarPage() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto text-center">
-              <NavLink to={"/"} className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "active" : "")} end>
-                Home
-              </NavLink>
-              <NavLink to={"/login"} className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "active" : "")} end>
-                Login
-              </NavLink>
+              <div className="navlink">
+                <NavLink to={"/"} className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "active" : "")} end>
+                  Home
+                </NavLink>
+                <NavLink to={"/login"} className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "active" : "")} end>
+                  Login
+                </NavLink>
+              </div>
             </Nav>
           </Navbar.Collapse>
         </Container>

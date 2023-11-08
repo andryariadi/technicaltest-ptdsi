@@ -34,6 +34,16 @@
   color: var(--color-text);
 }
 
+@media screen and (max-width: 768px) {
+  .navbar .navlink {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+}
+
 .navbar a:hover {
   background-color: var(--secondary-color);
   border-radius: 5px;
@@ -48,9 +58,13 @@
 }
 
 .navbar.color-active {
-  background-color: rgb(251, 173, 79);
+  /* background-color: rgb(251, 173, 79); */
   padding: 20px 0 20px 0;
   /* border-bottom: 2px solid #dc35463b; */
+  background: rgba(251, 139, 3, 0.744);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 /* Navbar */
 
