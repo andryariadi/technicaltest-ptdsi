@@ -20,11 +20,11 @@
   width: 100%;
   transition: all 0.2s ease;
   z-index: 9999;
-  /* background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0.5px);
   -webkit-backdrop-filter: blur(0.5px);
-  border: 1px solid rgba(255, 255, 255, 0.18); */
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .navbar a {
@@ -48,7 +48,7 @@
 }
 
 .navbar.color-active {
-  background-color: bisque;
+  background-color: rgb(251, 173, 79);
   padding: 20px 0 20px 0;
   /* border-bottom: 2px solid #dc35463b; */
 }
