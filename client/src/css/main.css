@@ -12,3 +12,42 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  padding: 15px 0 15px 0;
+  width: 100%;
+  /* background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18); */
+}
+
+.navbar a {
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.navbar a:hover {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  transition: 1.2s;
+}
+
+.navbar .active {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 5px;
+  margin: 0 5px 0 5px;
+}
+/* Navbar */
+
+/* Main */
+main {
+  /* background-color: #121019; */
+}
+/* Main */

@@ -1,7 +1,9 @@
 export default function Home() {
   return (
     <>
-      <h1>yuhuuuuuu</h1>
+      <main className="w-100 min-vh-100">
+        <h1>yuhuuuu</h1>
+      </main>
     </>
   );
 }

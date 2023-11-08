@@ -1,18 +1,25 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-router-dom";
 
 export default function NavbarPage() {
   return (
     <>
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar expand="lg">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
+          <Navbar.Brand>TechnicalTest</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto text-center">
+              <NavLink to={"/"} className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "active" : "")} end>
+                Home
+              </NavLink>
+              <NavLink to={"/login"} className={({ isActive, isPending }) => (isPending ? "pending" : isActive ? "active" : "")} end>
+                Login
+              </NavLink>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
