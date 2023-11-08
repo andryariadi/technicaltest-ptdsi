@@ -69,7 +69,11 @@
 /* Navbar */
 
 /* Main */
-main {
-  /* background-color: #121019; */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 5rem 0 0 0;
 }
 /* Main */
