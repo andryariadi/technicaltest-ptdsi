@@ -31,7 +31,7 @@ const columns = [
 export default function TableCom({ users }) {
   return (
     <div className="table-container">
-      <DataTable columns={columns} data={users} />
+      <DataTable columns={columns} data={users} pagination fixedHeader selectableRows />
     </div>
   );
 }

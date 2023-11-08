@@ -73,7 +73,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   height: 100vh;
-  padding: 5rem 0 0 0;
+  padding: 6.1rem 0 45px 0;
 }
 /* Main */
