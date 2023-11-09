@@ -157,8 +157,31 @@ header.sc-dIUfKc.goZmTm {
   margin: auto;
 }
 
-.text-detail {
+.text-detail,
+.text-create {
   color: #f6f8fd;
   margin-bottom: 10px;
 }
 /* TableDetail */
+
+/* TableCreate */
+.table-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0; /* Reset margin to remove default margin */
+  /* background-color: #dc3545; */
+}
+
+form {
+  width: 500px; /* Set width of the form */
+  margin: 20px; /* Add some margin around the form */
+}
+
+.col-form-label {
+  color: white;
+}
+
+/* TableCreate */

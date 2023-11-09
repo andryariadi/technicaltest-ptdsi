@@ -1,10 +1,10 @@
-import FormCreate from "../components/FormCreate";
+import FormComponent from "../components/FormComponent";
 
 export default function AddUser() {
   return (
     <>
       <div className="container">
-        <FormCreate />
+        <FormComponent />
       </div>
     </>
   );
