@@ -2,7 +2,10 @@ import DataTable from "react-data-table-component";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import { FaUserPlus } from "react-icons/fa";
+import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const columns = [
   {
@@ -36,15 +39,15 @@ const columns = [
     width: "150px",
     cell: (row) => (
       <div className="d-flex column-gap-1">
-        <button className="btn btn-sm">
+        <Link to={`detail/${row.id}`} className="btn btn-sm">
           <BsInfoCircleFill size={20} color="#5DBEA3" />
-        </button>
-        <button className="btn btn-sm">
+        </Link>
+        <Link to={`/edit/${row.id}`} className="btn btn-sm">
           <AiTwotoneEdit size={20} color="#5783DB" />
-        </button>
-        <button className="btn btn-sm">
+        </Link>
+        <Link to={`/delete/${row.id}`} className="btn btn-sm">
           <RiDeleteBin6Fill size={20} color="#DC3545" />
-        </button>
+        </Link>
       </div>
     ),
   },
@@ -84,7 +87,23 @@ export default function TableCom({ users }) {
         selectableRowsHighlight
         highlightOnHover
         subHeader
-        subHeaderComponent={<input type="text" className="form-control w-25" placeholder="Search..." onChange={handleSearch} />}
+        subHeaderComponent={
+          <Row className="d-flex justify-content-between align-items-center w-100 mb-3">
+            <Col xs={12} md={6}>
+              <input type="text" className="form-control" placeholder="Search..." onChange={handleSearch} />
+            </Col>
+            <Col xs={12} md={6} className="d-flex justify-content-end">
+              <Link to={`/add-user`} className="btn btn-user btn-sm d-flex column-gap-2 bg-primary">
+                <div>
+                  <FaUserPlus size={20} color="#1E1E1E" />
+                </div>
+                <div>
+                  <p className="text-adduser">Add User</p>
+                </div>
+              </Link>
+            </Col>
+          </Row>
+        }
         striped
         bordered
         hover

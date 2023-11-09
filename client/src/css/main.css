@@ -77,4 +77,29 @@
   height: 100vh;
   padding: 5rem 0 45px 0;
 }
+
+.btn-user {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-user p {
+  margin: 0; /* Menghapus margin default pada elemen <p> */
+}
+
+.text-adduser {
+  color: #1e1e1e;
+  font-weight: bold;
+}
+
+.form-control {
+  max-width: 250px;
+}
+
+header.sc-dIUfKc.goZmTm {
+  justify-content: center;
+  padding-top: 18px;
+}
+
 /* Main */
