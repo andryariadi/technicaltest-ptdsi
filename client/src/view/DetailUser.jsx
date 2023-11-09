@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUserDetailAsync } from "../store/actions/actionCreator";
 import { useEffect } from "react";
+import TabelDetail from "../components/TableDetail";
 
 export default function DetailUser() {
   const dispatch = useDispatch();
@@ -26,8 +27,9 @@ export default function DetailUser() {
 
   return (
     <>
-      <h1>Detail Pagee {id}</h1>
-      {/* <h4>{}</h4> */}
+      <div className="container">
+        <TabelDetail user={user} />
+      </div>
     </>
   );
 }
