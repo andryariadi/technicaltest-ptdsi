@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUserAsyncSuccess } from "../store/actions/actionCreator";
 
+const handleDelete = (id) => {
+  console.log(id);
+};
 const columns = [
   {
     name: "ID",
@@ -45,7 +48,7 @@ const columns = [
         <Link to={`/edit/${row.id}`} className="btn btn-sm">
           <AiTwotoneEdit size={20} color="#5783DB" />
         </Link>
-        <Link to={`/delete/${row.id}`} className="btn btn-sm">
+        <Link className="btn btn-sm" onClick={() => handleDelete(row.id)}>
           <RiDeleteBin6Fill size={20} color="#DC3545" />
         </Link>
       </div>

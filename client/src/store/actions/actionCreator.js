@@ -81,3 +81,65 @@ export const fetchUserDetailAsync = (id) => {
       });
   };
 };
+
+export const createUser = ({ name, email, address, phone }) => {
+  console.log({ name, email, address, phone }, "<<<<diactionnnn");
+  return async () => {
+    try {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/users`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, address, phone }),
+      });
+      if (!response.ok) {
+        throw { message: "Something went wrong!" };
+      }
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      fetchUserFailed(err);
+      console.log(err);
+      throw err;
+    }
+  };
+};
+
+export const fetchUserEditlAsync = (id, updatedUserData) => {
+  return (dispatch) => {
+    dispatch(fetchUserDetailLoading());
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedUserData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "<<<<<<detailactionnn");
+        const action = fetchUserDetailSuccess(data);
+        dispatch(action);
+      })
+      .catch((err) => {
+        console.log(err);
+        dispatch(fetchUserDetailFailed(err));
+      });
+  };
+};
+
+export const deleteUser = (id) => {
+  return (dispatch) => {
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(() => {
+        dispatch(fetchUserAsyncSuccess());
+      })
+      .catch((err) => fetchUserFailed(err));
+  };
+};

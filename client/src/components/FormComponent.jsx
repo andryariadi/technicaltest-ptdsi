@@ -1,11 +1,13 @@
+// FormComponent.jsx
 import React, { Component } from "react";
-import { Field, reduxForm } from "redux-form";
+import { Field, reduxForm, initialize } from "redux-form";
 import { FormGroup, Col, Label, Input, Row, Button } from "reactstrap";
+import UserValidation from "../validations/userValidation";
 
 const renderField = ({ input, type, placeholder, label, disabled, readOnly, meta: { touched, error, warning } }) => (
   <Row>
     <Col md="12">
-      <Label htmlFor="{input}" className="col-form-label">
+      <Label htmlFor={input} className="col-form-label">
         {label}
       </Label>
     </Col>
@@ -16,13 +18,26 @@ const renderField = ({ input, type, placeholder, label, disabled, readOnly, meta
   </Row>
 );
 
-export default class FormComponent extends Component {
+class FormComponent extends Component {
+  componentDidMount() {
+    const { initialize, user } = this.props;
+    if (user && user.address && user.address.street) {
+      initialize({
+        name: user.name,
+        address: user.address.street,
+        email: user.email,
+        phone: user.phone,
+      });
+    }
+  }
+
   render() {
+    const { title, handleSubmit } = this.props;
     return (
       <>
         <div className="table-form">
-          <h1 className="text-create">Create User</h1>
-          <form>
+          <h1 className="text-create">{title}</h1>
+          <form onSubmit={handleSubmit}>
             <FormGroup row>
               <Col md={6}>
                 <FormGroup>
@@ -52,7 +67,7 @@ export default class FormComponent extends Component {
             <FormGroup row>
               <Col md="12">
                 <FormGroup>
-                  <Button color="primary" type="submit" disabled>
+                  <Button color="primary" type="submit" disabled={this.props.submitting}>
                     Submit
                   </Button>
                 </FormGroup>
@@ -67,6 +82,8 @@ export default class FormComponent extends Component {
 
 FormComponent = reduxForm({
   form: "formCreateUser",
-  // validate: UserValidation,
+  validate: UserValidation,
   enableReinitialize: true,
 })(FormComponent);
+
+export default FormComponent;
