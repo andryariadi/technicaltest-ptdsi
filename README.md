@@ -232,3 +232,7 @@ bs: "target end-to-end models",
 },
 },
 ];
+
+const getData = () => {
+axios(`https://jsonplaceholder.typicode.com/users`).then((res) => setData(res.data));
+};
