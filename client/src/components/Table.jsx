@@ -2,7 +2,7 @@ import DataTable from "react-data-table-component";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { RiDeleteBin6Fill } from "react-icons/ri";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const columns = [
   {
