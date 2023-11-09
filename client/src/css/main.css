@@ -101,5 +101,47 @@ header.sc-dIUfKc.goZmTm {
   justify-content: center;
   padding-top: 18px;
 }
-
 /* Main */
+
+/* Loader */
+.loading-layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+}
+
+.loading {
+  width: 50px;
+  height: 50px;
+  display: grid;
+}
+.loading::before,
+.loading::after {
+  content: "";
+  grid-area: 1/1;
+  --c: radial-gradient(farthest-side, #ffc436 92%, #0000);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%, var(--c) 0 50%;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  animation: s2 1s infinite;
+}
+.loading::before {
+  margin: 4px;
+  filter: hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear;
+}
+
+@keyframes s2 {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
+/* Loader */

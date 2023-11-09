@@ -64,6 +64,14 @@ export default function Home() {
     dispatch(fetchUserAsyncSuccess());
   }, []);
 
+  if (loading) {
+    return (
+      <div className="loading-layer">
+        <div className="loading"></div>
+      </div>
+    );
+  }
+
   console.log(users, "<<<<dihomeeeee");
 
   return (
