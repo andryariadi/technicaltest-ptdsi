@@ -4,6 +4,7 @@ export default function TabelDetail({ user }) {
   return (
     <>
       <div className="table-detail">
+        <h1 className="text-detail">Detail User</h1>
         <Table dark striped>
           <tbody>
             <tr>

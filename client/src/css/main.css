@@ -150,9 +150,15 @@ header.sc-dIUfKc.goZmTm {
 .table-detail {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
   height: 100vh;
   width: 50%;
   margin: auto;
+}
+
+.text-detail {
+  color: #f6f8fd;
+  margin-bottom: 10px;
 }
 /* TableDetail */
