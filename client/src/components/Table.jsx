@@ -9,6 +9,7 @@ const columns = [
     name: "ID",
     selector: (row) => row.id,
     sortable: true,
+    width: "65px",
   },
   {
     name: "Name",
@@ -32,6 +33,7 @@ const columns = [
   },
   {
     name: "Action",
+    width: "150px",
     cell: (row) => (
       <div className="d-flex column-gap-1">
         <button className="btn btn-sm">
@@ -74,7 +76,7 @@ export default function TableCom({ users }) {
     <div className="table-container">
       <DataTable
         columns={columns}
-        data={filteredUsers} // Gunakan data yang sudah difilter
+        data={filteredUsers}
         customStyles={tableHeaderStyle}
         pagination
         fixedHeader
@@ -83,6 +85,10 @@ export default function TableCom({ users }) {
         highlightOnHover
         subHeader
         subHeaderComponent={<input type="text" className="form-control w-25" placeholder="Search..." onChange={handleSearch} />}
+        striped
+        bordered
+        hover
+        variant="dark"
       />
     </div>
   );
