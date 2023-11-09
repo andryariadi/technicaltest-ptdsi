@@ -1,5 +1,4 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import TableCom from "../components/Table";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { AiTwotoneEdit } from "react-icons/ai";

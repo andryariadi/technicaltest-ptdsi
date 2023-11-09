@@ -54,7 +54,7 @@ export const fetchUserAsyncSuccess = () => {
         dispatch(action);
       })
       .catch((err) => {
-        console.log(err);
+        console.log();
         dispatch(fetchUserFailed(err));
       });
   };
@@ -63,7 +63,7 @@ export const fetchUserAsyncSuccess = () => {
 export const fetchUserDetailAsync = (id) => {
   return (dispatch) => {
     dispatch(fetchUserDetailLoading());
-    fetch(`${baseUrl}/jobs/${id}`, {
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export const fetchUserDetailAsync = (id) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, "<<<<<<detail diactionnn");
+        console.log(data, "<<<<<<detailactionnn");
         const action = fetchUserDetailSuccess(data);
         dispatch(action);
       })
