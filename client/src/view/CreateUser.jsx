@@ -1,7 +1,11 @@
+import FormCreate from "../components/FormCreate";
+
 export default function AddUser() {
   return (
     <>
-      <h1>Add Page</h1>
+      <div className="container">
+        <FormCreate />
+      </div>
     </>
   );
 }

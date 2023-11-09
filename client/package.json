@@ -17,12 +17,11 @@
     "react-data-table-component": "^7.5.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
-    "react-redux": "^8.1.3",
+    "regitact-redux": "^8.1.3",
     "react-router-dom": "^6.18.0",
     "react-tsparticles": "^2.12.2",
     "reactstrap": "^9.2.1",
     "redux": "^4.2.1",
-    "redux-form": "^8.3.10",
     "redux-thunk": "^2.4.2",
     "tsparticles-slim": "^2.12.0"
   },

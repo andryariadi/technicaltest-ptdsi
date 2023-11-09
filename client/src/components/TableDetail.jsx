@@ -1,6 +1,7 @@
 import { Table } from "reactstrap";
 
 export default function TabelDetail({ user }) {
+  const address = user.address || {};
   return (
     <>
       <div className="table-detail">
@@ -21,7 +22,7 @@ export default function TabelDetail({ user }) {
               <td width="100">Address</td>
               <td width="30">:</td>
               <td>
-                {user.address.street} - {user.address.suite}, {user.address.city}
+                {address.street} - {address.suite}, {address.city}
               </td>
             </tr>
             <tr>
@@ -37,7 +38,7 @@ export default function TabelDetail({ user }) {
             <tr>
               <td width="100">Workplace</td>
               <td width="30">:</td>
-              <td>{user.company.name}</td>
+              <td>{user.company?.name}</td>
             </tr>
           </tbody>
         </Table>
