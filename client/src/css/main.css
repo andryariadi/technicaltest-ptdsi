@@ -1,0 +1,187 @@
+:root {
+  --primary-color: #f6f8fd;
+  --secondary-color: #dc3545;
+  --color-text: #231942;
+  --navbar-color: #ffffff;
+  --navbar-color-text: #000000;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  padding: 15px 0 15px 0;
+  width: 100%;
+  transition: all 0.2s ease;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.navbar a {
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .navlink {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+}
+
+.navbar a:hover {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  transition: 1.2s;
+}
+
+.navbar .active {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 5px;
+  margin: 0 5px 0 5px;
+}
+
+.navbar.color-active {
+  /* background-color: rgb(251, 173, 79); */
+  padding: 20px 0 20px 0;
+  /* border-bottom: 2px solid #dc35463b; */
+  background: rgba(119, 107, 93, 0.829);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+/* Navbar */
+
+/* Main */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  padding: 5rem 0 45px 0;
+}
+
+.btn-user {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-user p {
+  margin: 0; /* Menghapus margin default pada elemen <p> */
+}
+
+.text-adduser {
+  color: #1e1e1e;
+  font-weight: bold;
+}
+
+.form-control {
+  max-width: 250px;
+}
+
+header.sc-dIUfKc.goZmTm {
+  justify-content: center;
+  padding-top: 18px;
+}
+/* Main */
+
+/* Loader */
+.loading-layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+}
+
+.loading {
+  width: 50px;
+  height: 50px;
+  display: grid;
+}
+.loading::before,
+.loading::after {
+  content: "";
+  grid-area: 1/1;
+  --c: radial-gradient(farthest-side, #ffc436 92%, #0000);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%, var(--c) 0 50%;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  animation: s2 1s infinite;
+}
+.loading::before {
+  margin: 4px;
+  filter: hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear;
+}
+
+@keyframes s2 {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
+/* Loader */
+
+/* TableDetail */
+.table-detail {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100vh;
+  width: 50%;
+  margin: auto;
+}
+
+.text-detail,
+.text-create {
+  color: #f6f8fd;
+  margin-bottom: 10px;
+}
+/* TableDetail */
+
+/* TableCreate */
+.table-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0; /* Reset margin to remove default margin */
+  /* background-color: #dc3545; */
+}
+
+form {
+  width: 500px; /* Set width of the form */
+  margin: 20px; /* Add some margin around the form */
+}
+
+.col-form-label {
+  color: white;
+}
+
+/* TableCreate */
