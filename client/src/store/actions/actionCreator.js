@@ -40,12 +40,12 @@ export const fetchUserDetailFailed = (data) => {
   };
 };
 
-const baseUrll = `https://jsonplaceholder.typicode.com/users`;
+const baseUrl = `https://jsonplaceholder.typicode.com/users`;
 
 export const fetchUserAsyncSuccess = () => {
   return (dispatch) => {
     dispatch(fetchUserLoading());
-    fetch(`${baseUrll}`, {
+    fetch(`${baseUrl}`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -65,7 +65,7 @@ export const fetchUserAsyncSuccess = () => {
 export const fetchUserDetailAsync = (id) => {
   return (dispatch) => {
     dispatch(fetchUserDetailLoading());
-    fetch(`${baseUrll}/${id}`, {
+    fetch(`${baseUrl}/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export const createUser = ({ name, email, address, phone }) => {
   console.log({ name, email, address, phone }, "<<<<diactionnnn");
   return async () => {
     try {
-      const response = await fetch(`${baseUrll}`, {
+      const response = await fetch(`${baseUrl}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -111,7 +111,7 @@ export const createUser = ({ name, email, address, phone }) => {
 export const fetchUserEditlAsync = (id, updatedUserData) => {
   return (dispatch) => {
     dispatch(fetchUserDetailLoading());
-    fetch(`${baseUrll}/${id}`, {
+    fetch(`${baseUrl}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -133,7 +133,7 @@ export const fetchUserEditlAsync = (id, updatedUserData) => {
 
 export const deleteUser = (id) => {
   return (dispatch) => {
-    fetch(`${baseUrll}/${id}`, {
+    fetch(`${baseUrl}/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
